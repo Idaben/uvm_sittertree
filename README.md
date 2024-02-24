@@ -1,3 +1,10 @@
+UVM is a not a language, and so this is not a UVM tree sitter repo. It is a guide for myself, when I forget how to put the better working systemverilog tree sitter parser into my neovim setup. 
+
+
+
+
+
+
 There is currently a treesitter for systemverilog aptly name, "tree-sitter-verilog". 
 
 I started with using that and quickly realized that the highlighting is messed up. I tried debugging it, but showed up with nothing.
