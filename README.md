@@ -32,3 +32,9 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
      filetype = "systemverilog", -- if filetype does not match the parser name
    }
 ```
+
+
+note : if the name of the parser is changed, (such as the snip of code here, "idaben_uvm_ts"), then you need to go in to the grammar.js of the source and replace the name of the parser there too. Then you would need to recompile, so you'll have the proper .so file that will be used by nvim_treesitter.
+
+hack manually 
+copy the idaben_uvm_ts.so file here, and go to the working directory of nvim_treesitter. (something like, site/pack/packer, we were using packer at this point, so if I changed my plugin manager, then this would also change). In there you will see a folder named "parser", that will contain the .so files of all the languages that you installed based in the treesitter.lua. Copy idaben_uvm_ts.so here. In that same main directory, there will be a folder called queries or query, mkdir idaben_uvm_ts folder, and copy the scheme files in there. Also don't forget to put the code snip in the treesitter.lua and update the url or path (but do not install!!!!, since this will replace the hacked .so). Everything should work at this point. Opening a .sv file would have the proper highlighting and running :InspectTree or :TSPlaygroundToggle should show a beautiful node tree.
